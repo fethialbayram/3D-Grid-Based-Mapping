@@ -1,3 +1,9 @@
+/*
+* @file Point.h
+* @author Umut Birinci (152120171046)
+* @date 17.12.2022
+* @brief Header of Point class.
+*/
 #pragma once
 #include<cmath>
 #include<iostream>
@@ -8,24 +14,25 @@ class Point {
     friend class PointCloud;
     
 private:
-  double x;
-  double y;
-  double z;
+    
+  double x; // x coordinate of point
+  double y; // y coordinate of point
+  double z; // z coordinate of point
         
 public:
     
-    //Constructor
+    //Constructor Function
     Point();
     Point(double,double,double) ;
-    //Set-Get Functions
+    //Setter-Getter Functions
     void setX(double);
     double getX() const;
     void setY(double);
     double getY() const;
     void setZ(double);
     double getZ() const;
-    //Equal Operator Overload
+    //Equal Operator Overload Function
     bool operator==(const Point&)const;
-    //Distance
+    //Calculate Distance Func.
     double distance(const Point&)const;
 };

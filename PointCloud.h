@@ -1,3 +1,9 @@
+/*
+* @file PointClass.h
+* @author Umut Birinci (152120171046)
+* @date 18.12.2022
+* @brief Header of PointCloud class.
+*/
 #pragma once
 #include<cmath>
 #include<iostream>
@@ -12,24 +18,29 @@
 using namespace std;
 
 class PointCloud {
+    // Friend Class Definitions
     friend class PointCloudRecorder;
     friend class DepthCamera;
     friend class Transform;
     friend class ThreeDGridMap;
+    
 private:
-  
-  int pointNumber;
-  Point* points;
+   
+  int pointNumber; // Number of points
+  Point* points; // The list of points
     
 public:
-
+    //Constructor Functions
     PointCloud(int);
     PointCloud(const PointCloud&);
+    //Setter-Getter Functions
     void setPoints(Point*);
     Point* getPoints() const ;
     void setPointNumber(int);
     int getPointNumber() const;
+    //Addition Operator Overload Function
     PointCloud operator+(const PointCloud&) const ;
+    //Copy Operator Overload Function
     PointCloud& operator=(const PointCloud&) ;
     
     
